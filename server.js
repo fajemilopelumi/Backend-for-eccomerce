@@ -12,7 +12,9 @@ dotenv.config()
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazona', {
+app.use(express.static('my-eccomerce/build'))
+
+mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true, 
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -34,9 +36,17 @@ app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 // app.get('/', (req, res) => {
 //   res.send('Server is ready');
 // });
+
 app.use((err,req,res,next)=>{
   res.status(500).send({message: err.message})
 })
+
+if(process.env.NODE_ENV === 'production'){
+  const path = require('path');
+  app.get('/*', (req,res)=>{
+    res.sendFile(path.resolve(__dirname,'../my-eccomerce','build','index.html'))
+  })
+}
 const port = process.env.PORT || 300; 
 
 app.listen(port, () => {

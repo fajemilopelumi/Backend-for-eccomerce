@@ -11,7 +11,7 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "my-eccomerce":"npm run start --prefix my-eccomerce",
-    "dev": "concurrently \"npm run server\" \"npm run my-eccomerce\"", 
+    "dev": "concurrently \"npm run server\" \"npm run my-eccomerce\""
     
   },
   "author": "",

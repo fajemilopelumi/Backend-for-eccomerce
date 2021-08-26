@@ -9,9 +9,7 @@
   "main": "index.js",
   "scripts": {
     "build": "cd my-eccomerce && npm install && npm run build",
-    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js",
-    "my-eccomerce": "npm run start --prefix my-eccomerce",
-    "dev": "concurrently \"npm run server\" \"npm run my-eccomerce\""
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
   "author": "",
   "license": "ISC",

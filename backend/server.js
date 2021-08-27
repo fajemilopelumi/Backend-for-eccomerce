@@ -7,6 +7,7 @@ import userRouter from "./router/userRouter.js";
 import orderRouter from "./router/orderRouter.js";
 import uploadRouter from './router/uploadRouter.js';
 
+
 dotenv.config()
 
 const app = express();
@@ -20,7 +21,6 @@ mongoose.connect(process.env.MONGODB_URL, {
   useCreateIndex: true,
 }) 
 
-app.use(express.static('my-eccomerce/build'))
 
 app.use('/api/uploads', uploadRouter);
 app.use('/api/users', userRouter) 
@@ -40,11 +40,7 @@ app.use((err,req,res,next)=>{
   res.status(500).send({message: err.message})
 })
 
-// if(process.env.NODE_ENV === 'production'){
-//   app.get('/*', (req,res)=>{
-//     res.sendFile(path.resolve(__dirname,'./my-eccomerce','build','index.html'))
-//   })
-// }
+
 const port = process.env.PORT || 300; 
 
 app.listen(port, () => {

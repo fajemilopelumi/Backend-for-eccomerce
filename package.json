@@ -3,16 +3,14 @@
   "type": "module",
   "version": "1.0.0",
   "engines": {
-    "node": "14.17.0"
+    "node": "14.17.0",
+    "npm": "6.14.13"
   },
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "my-eccomerce":"npm run start --prefix my-eccomerce",
-    "dev": "concurrently \"npm run server\" \"npm run my-eccomerce\""
-    
+    "build": "cd frontend && npm install && npm run build",
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
   "author": "",
   "license": "ISC",

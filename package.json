@@ -10,7 +10,7 @@
   "main": "index.js",
   "scripts": {
     "build": "cd my-eccomerce && npm install && npm run build",
-    "start": "node backend/server.js"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
   },
   "author": "",
   "license": "ISC",

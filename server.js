@@ -40,10 +40,10 @@ app.use((err,req,res,next)=>{
 })
 
 if(process.env.NODE_ENV === 'production'){
-  // app.use(express.static(path.join(__dirname,'./my-eccomerce/build')));
+  app.use(express.static(path.join(__dirname,'my-eccomerce/build')));
 
   app.get('*', (req,res)=>{
-    res.sendFile(path.resolve(__dirname,'./my-eccomerce', 'build', 'index.html'))
+    res.sendFile(path.join(__dirname,'my-eccomerce', 'build', 'index.html'))
   })
 } else {
   app.get('/',(req,res)=>{

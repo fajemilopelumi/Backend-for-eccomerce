@@ -9,10 +9,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "my-eccomerce":"npm run start --prefix my-eccomerce",
-    "dev": "concurrently \"npm run server\" \"npm run my-eccomerce\""
+    "start": "nodemon --watch backend --exec node --experimental-modules server.js"
   },
   "author": "",
   "license": "ISC",

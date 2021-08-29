@@ -10,8 +10,6 @@
   "main": "index.js",
   "scripts": {
     "build": "cd my-eccomerce && npm run build",
-        "install-client": "cd my-eccomerce && npm install",
-        "heroku-postbuild": "npm run install-client && npm run build",
         "server": "nodemon backend/server.js",
         "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix my-eccomerce\"",
         "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix my-eccomerce\""

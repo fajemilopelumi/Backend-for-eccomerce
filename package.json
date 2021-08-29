@@ -9,10 +9,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cd my-eccomerce && npm run build",
-        "server": "nodemon backend/server.js",
-        "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix my-eccomerce\"",
-        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix my-eccomerce\""
+    "build": "cd my-eccomerce && npm install && npm run build",
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
   "author": "",
   "license": "ISC",
